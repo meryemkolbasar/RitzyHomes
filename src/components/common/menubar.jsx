@@ -1,14 +1,13 @@
 import React from "react";
-import { Container, Image, Navbar, Offcanvas } from "react-bootstrap";
+import { Container, Image, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { config } from "../../helpers/config";
 import { CiUser } from "react-icons/ci";
 import { FaArrowRightToBracket } from "react-icons/fa6";
-import Menu from "./menu";
 
 const Menubar = () => {
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" sticky="top" className="bg-white ">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <Image src="/images/logo.png" alt={config.project.name} />
@@ -25,7 +24,23 @@ const Menubar = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-              <Menu className="justify-content-center flex-grow-1 pe-3"/>
+            <Nav className="justify-content-center flex-grow-1 pe-3">
+              <Nav.Link as={Link} to="/">
+                Home
+              </Nav.Link>
+              <Nav.Link as={Link} to="/properties">
+                Properties
+              </Nav.Link>
+              <Nav.Link as={Link} to="/about">
+                About
+              </Nav.Link>
+              <Nav.Link as={Link} to="/contact">
+                Contact
+              </Nav.Link>
+              <Nav.Link as={Link} to="/contact">
+                Privacy Policy
+              </Nav.Link>
+            </Nav>
             <div className="mt-2 me-2">
               <CiUser /> Login/Register
             </div>
