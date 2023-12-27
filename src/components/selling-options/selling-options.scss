@@ -1,0 +1,55 @@
+@use "../../styles/veriables" as v;
+
+
+
+.selling-options {
+
+ 
+
+    .selling {
+
+        margin-top: 20px;
+
+
+
+        .icon-1 {
+            display: flex;
+            border: 1px solid;
+            border-radius: 100%;
+            width: 130px;
+            font-size: 60px;
+            margin-right: 20px;
+            align-items: center;
+            justify-content: center;
+            background-color: v.$color7;
+            color: v.$color2;
+        }
+        .icon-2{
+            display: flex;
+            border: 1px solid;
+            border-radius: 100%;
+            width: 140px;
+            font-size: 60px;
+            margin-right: 20px;
+            align-items: center;
+            justify-content: center;
+            background-color: v.$color7;
+            color: v.$color2;
+        }
+        .icon-3 {
+            display: flex;
+            border: 1px solid;
+            border-radius: 100%;
+            width: 140px;
+            font-size: 60px;
+            margin-right: 20px;
+            align-items: center;
+            justify-content: center;
+            background-color: v.$color7;
+            color: v.$color2;
+            margin-bottom: 20px;
+        }
+    }
+
+    
+}

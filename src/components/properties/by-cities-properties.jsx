@@ -34,7 +34,7 @@ const ByCitiesProperties = ({ city, content }) => {
       <h2>Explore Properties</h2>
       <p>By Cities</p>
       </div>
-        <Row className="g-5" xs={1} sm={2} md={3} lg={5}>
+        <Row className="g-5" xs={2} sm={2} md={3} lg={5}>
           {cardCities.map((card, index) => (
             <Col>
               <Card key={index}>

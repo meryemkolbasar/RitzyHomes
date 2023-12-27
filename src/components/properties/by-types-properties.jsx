@@ -40,12 +40,12 @@ const ByTypesProperties = ({ title, content, icon }) => {
   return (
     
 
-        <Container className='by-types-properties'>
+        <Container className='by-types-properties '>
           <div >
         <h2>Explore Properties</h2>
         <p>By Types</p>
         </div>
-            <Row className='g-5' xs={1} sm={2} md={3} lg={5} >
+            <Row className='g-5' xs={2} sm={2} md={3} lg={5} >
                 {cardData.map((card, index) =>(
                     <Col>
                     <Card key={index}>

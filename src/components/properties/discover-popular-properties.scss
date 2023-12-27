@@ -1,0 +1,54 @@
+@use "../../styles/veriables" as v;
+
+
+.discover-properties{
+    height: 100%;
+    width: 100%;
+    
+    .icon {
+        font-size: 30px;
+       
+    }
+    
+    
+    .card-body{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: v.$color3;
+
+        .title-subtitle {
+            display: flex;
+            border-radius: 20px;
+            border: 2px solid v.$color10;
+            background-color: v.$color9;
+            justify-content: space-between;
+            height: 80px;
+    
+            .card-title{
+                font-size: 14px;
+                margin-top: 18px;
+                margin-left: 8px;
+                
+    
+            }
+    
+            .price{
+                border: 2px solid v.$color6;
+                border-radius: 10px;
+                background-color: v.$color3;
+                width: 90px;
+                height: 45px;
+                padding: 10px 9px;
+                margin-top: 20px;
+                margin-right: 8px;
+            }
+        }
+    }
+    
+ }
+   
+
+
+
