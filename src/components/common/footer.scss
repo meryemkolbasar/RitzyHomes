@@ -1,0 +1,18 @@
+@use "../../styles/veriables" as v;
+
+footer {
+    background-color: v.$color2;
+    color: v.$color3;
+    padding-top: 150px;
+    padding-bottom: 150px;
+
+    p {
+        margin-top: 20px;
+    }
+
+
+    .button {
+        margin-top: 30px;
+        border-radius: 30px;
+    }
+}

@@ -1,0 +1,39 @@
+@use "../../styles/_veriables.scss" as v;
+
+
+.by-types-properties {
+
+
+ 
+    p {
+        color: orange;
+        font-weight: 500;
+    }
+
+    .card{
+        border-radius: 40px;
+        height: 300px;
+        font-size: 50px;
+        border: 3px solid v.$color3;
+        background-color: v.$color3;
+        margin-top: 30px;
+
+        .icon {
+            border-radius: 100px;
+            font-size: 40px;
+            width: 40%;
+            height: 17%;
+            text-align: center;
+            justify-content: center;
+            padding-top: 7px;
+            margin-left: 20px;
+            margin-top: 20px;
+            border: 2px solid v.$color3;
+            background-color: white;
+        }
+
+        .card-title {
+            padding-top: 70px;
+        }
+    }
+} 

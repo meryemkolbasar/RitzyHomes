@@ -1,0 +1,31 @@
+@use "../../styles/veriables" as v;
+
+
+.dream-house {
+    
+
+    .container {
+        border-radius: 20px;
+        background-color: v.$color8;
+
+        .comment {
+            padding-top: 90px;
+            padding-left: 60px;
+
+            button {
+                border-radius: 20px;
+                font-size: 20px;
+                width: 200px;
+                height: 60px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+           
+        }
+
+        
+        
+    }
+    
+
+}

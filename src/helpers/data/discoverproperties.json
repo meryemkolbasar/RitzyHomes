@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Luxury villa in Central Park",
+    "desc": "Pendik, stanbul",
+    "image": "banner.png"
+  },
+  {
+    "id": 2,
+    "title": "Luxury villa in Central Park",
+    "desc": "Pendik, stanbul",
+    "image": "banner.png"
+  },
+  {
+    "id": 3,
+    "title": "Luxury villa in Central Park",
+    "desc": "Pendik, stanbul",
+    "image": "banner.png"
+  },
+  {
+    "id": 4,
+    "title": "Luxury villa in Central Park",
+    "desc": "Pendik, stanbul",
+    "image": "banner.png"
+  },
+  {
+    "id": 5,
+    "title": "Luxury villa in Central Park",
+    "desc": "Pendik, stanbul",
+    "image": "banner.png"
+  },
+  {
+    "id": 6,
+    "title": "Luxury villa in Central Park",
+    "desc": "Pendik, stanbul",
+    "image": "villa.png"
+  }
+]

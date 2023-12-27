@@ -1,0 +1,23 @@
+@use "../../styles/veriables" as v;
+
+
+
+.by-cities-properties {
+
+
+    p {
+        color: orange;
+        font-weight: 500;
+    }
+
+    .card {
+        border: 2px solid v.$color3;
+        border-radius: 100px;
+        width: 120px;
+        height: 120px;
+        background-color: v.$color7;
+        padding-top: 10px;
+        padding-left: 5px;
+        margin-top: 30px;
+    }
+}

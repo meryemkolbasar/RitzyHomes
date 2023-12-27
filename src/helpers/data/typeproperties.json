@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "logo": "<TbSmartHome />",
+    "title": "Houses",
+    "properties": "33 Properties",
+    "image": "<TbSmartHome />"
+  },
+  {
+    "id": 2,
+    "title": "Apartments",
+    "properties": "21 Properties",
+    "image": "<TbSmartHome />"
+  },
+  {
+    "id": 3,
+    "title": "Offices",
+    "properties": "85 Properties",
+    "icon": "<TbSmartHome />"
+  },
+  {
+    "id": 4,
+    "title": "Villas",
+    "properties": "15 Properties",
+    "image": "<TbSmartHome />"
+  },
+  {
+    "id": 5,
+    "title": "Bungalows",
+    "properties": "21 Properties",
+    "image": "<TbSmartHome />"
+  }
+]
