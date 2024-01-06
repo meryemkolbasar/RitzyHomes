@@ -1,0 +1,31 @@
+@use "../../styles/veriables" as v;
+
+
+.container {
+
+
+
+    .about-us {
+        border-radius: 10px;
+        background-color: v.$color7;
+        height: 80px;
+        font-size: 30px;
+        margin-bottom: 40px;
+        margin-top: 40px;
+        padding: 17px 0 10px 30px;
+        color: v.$color2;
+    }
+
+    h2 {
+        margin-left: 20px;
+       
+    }
+
+    p {
+        margin-left: 20px;
+    }
+    
+
+    
+
+}
