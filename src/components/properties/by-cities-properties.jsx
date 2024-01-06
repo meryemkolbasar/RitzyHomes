@@ -28,6 +28,7 @@ const cardCities = [
 const ByCitiesProperties = ({ city, content }) => {
   return (
     
+    /* deneme yapmak için yapıldı */
 
       <Container className="by-cities-properties">
         <div >

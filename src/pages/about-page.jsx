@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import AboutUs from "../components/about/about-us";
+import Spacer from "../components/common/spacer";
+import SellingOptions from "../components/selling-options/selling-options";
+import NeddHelp from "../components/help/need-help";
 
 const AboutPage = () => {
   return (
-    <div>AboutPage</div>
-  )
-}
+    <>
+    <AboutUs/>
+    <Spacer/>
+    <SellingOptions/>
+    <Spacer/>
+    <NeddHelp/>
+    <Spacer/>
+    </>
+  );
+};
 
-export default AboutPage
+export default AboutPage;
