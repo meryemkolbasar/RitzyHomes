@@ -1,16 +1,18 @@
 @import '/src/styles/variables';
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
 .login-container {
    justify-content: center;
-   
-   
   }
   
   .email-input {
    width: 370px;
    background-color: $color13;
-   
   }
   
   .password-input {
@@ -18,7 +20,13 @@
     background-color: $color13;
   }
   
-  //.forgot-password-link {}
+ .forgot-password-link {
+  text-decoration: none;
+  color: black;
+  white-space: nowrap;
+  margin: 242px;
+}
+
   
   .login-button {
    background-color: $color1;
