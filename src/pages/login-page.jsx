@@ -1,9 +1,14 @@
 import React from 'react'
+import PageHeader from '../components/common/page-header'
+import LoginForm from '../components/login/LoginForm'
 
 const LoginPage = () => {
-  return (
-    <div>LoginPage</div>
-  )
+    return(
+        <>
+        <PageHeader title="LOGIN" />
+        <LoginForm/>
+        </>
+    )
 }
 
-export default LoginPage
+export default LoginPage 
