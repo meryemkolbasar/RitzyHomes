@@ -8,6 +8,7 @@ import ProfilPage from "../pages/profil-page";
 import Error401Page from "../pages/errors/error401-page";
 import Error404Page from "../pages/errors/error404-page";
 import LoginPage from "../pages/login-page";
+import RegisterPage from "../pages/register-page";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
         path: "login",
         element: <LoginPage />,
       },
+      {
+        path: "register",
+        element: <RegisterPage />,
+      }
     ],
   },
 ]);
