@@ -1,7 +1,7 @@
 import React from "react";
 import "./page-header.scss";
 
-const PageHeader = ({title}) => {
+const PageHeader = ({ title }) => {
   return (
     <div className="page-header">
       <h1>{title}</h1>

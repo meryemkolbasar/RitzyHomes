@@ -1,0 +1,17 @@
+@use "../../styles/veriables" as v;
+@use "../../styles/mixins" as m;
+
+.page-header {
+  background-image: linear-gradient(90deg,v.$color12-ligt,v.$color3);
+  text-align: left;
+  padding: 35px;
+  margin: 20px;
+  text-transform: uppercase;
+
+  @include m.borderRadius(19px);
+
+  h1 {
+    font-weight: 500;
+    font-size: 25px;
+  }
+}
