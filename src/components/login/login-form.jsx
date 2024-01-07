@@ -25,14 +25,15 @@ const LoginForm = () => {
           <label>
             Email
             <input className="email-input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-          </label>
-          <br />
+            
+            </label>
+            <br /> 
           <label>
             Password
             <input className="password-input" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </label>
           <br />
-          <Link className="forgot-password-link" style={{ textDecoration: "none", color: 'black' }}> Forgot password?</Link>
+          <Link className="forgot-password-link" style={{ textDecoration: "none", color: 'black', padding: '242px',whiteSpace:'nowrap' }}> Forgot password?</Link>
           <br />
           <button className="login-button" type="button" onClick={handleLogin}>
             Login
@@ -46,5 +47,5 @@ const LoginForm = () => {
     </Row>
   );
 };
-
+ 
 export default LoginForm;
