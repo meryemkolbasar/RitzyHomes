@@ -1,0 +1,37 @@
+@import '/src/styles/veriables';
+
+
+.login-container {
+   justify-content: center;
+   
+  }
+  
+  .email-input {
+   width: 350px;
+  background-color: $color11;
+   opacity: '1'; 
+  }
+  
+  .password-input {
+    width: 350px;
+    background-color: $color11;
+  }
+  
+  .forgot-password-link {
+    
+  }
+  
+  .login-button {
+   background-color: $color1;
+   color: $color8;
+  }
+    
+  .register-now-paragraph {
+    white-space: nowrap;
+    
+  }
+
+  .register-now-link {
+    color: black;
+  }
+  
