@@ -10,6 +10,7 @@ import Error404Page from "../pages/errors/error404-page";
 import LoginPage from "../pages/login-page";
 import RegisterPage from "../pages/register-page";
 import AddNewAdvertPage from "../pages/add-new-advert-page";
+import EditAdvertPage from "../pages/edit-advert-page";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,7 +56,11 @@ const router = createBrowserRouter([
       {
         path: "new-advert",
         element: <AddNewAdvertPage />
-      }
+      },
+      {
+        path: "edit-advert",
+        element: <EditAdvertPage />
+      }     
     ],
   },
 ]);
