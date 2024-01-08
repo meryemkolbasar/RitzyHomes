@@ -8,37 +8,53 @@
 
 .login-container {
    justify-content: center;
+   padding: 150px 0px;
   }
-  
-  .email-input {
-   width: 370px;
-   background-color: $color13;
+ 
+  .email-title,
+  .password-title {
+    font-size: 16px;
   }
-  
-  .password-input {
-    width: 370px;
-    background-color: $color13;
-  }
+
+.email-input,
+.password-input {
+  width: 390px;
+  background-color: $color13;
+  border: none;
+  border-bottom: 1.5px solid black;
+  height: 40px;
+  outline: none;
+  text-indent: 5px;
+  caret-color: gray;
+}
+
   
  .forgot-password-link {
   text-decoration: none;
   color: black;
   white-space: nowrap;
-  margin: 242px;
+  margin: 263px;
 }
 
   
   .login-button {
-   background-color: $color1;
-   color: $color8;
+   background-color: $color14;
+   color: white;
+   padding: 10px 80px ;
+   font-size: medium;
+   margin-left: 80px;
+   border: none;
+   
   }
     
   .register-now-paragraph {
     white-space: nowrap;
+    margin-left: 30px;
     
   }
 
   .register-now-link {
     color: black;
+    
   }
   
