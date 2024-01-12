@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
 import './login-form.scss';
 
 const LoginForm = () => {
@@ -19,8 +19,9 @@ const LoginForm = () => {
   };
 
   return (
+    <Container> 
     <Row className="login-container">
-      <Col md={2} className="mx-auto">
+      <Col  md={{ span: 4, offset: 1 }} xs={12}>
         <form>
           <label className='email-title'>
             Email
@@ -34,7 +35,7 @@ const LoginForm = () => {
           </label>
           <br />
           <br />
-          <Link className="forgot-password-link"> Forgot password?</Link>
+          <Link to='/forgot-password'className="forgot-password-link"> Forgot password?</Link>
           <br />
           <br />
           <button className="login-button" type="button" onClick={handleLogin}>
@@ -43,11 +44,12 @@ const LoginForm = () => {
         </form>
         <br />
         <p className="register-now-paragraph">
-          If you don't have an account.{" "}
+          If you don't have an account. {""}
           <Link to="/register" className="register-now-link">Register now!</Link>
         </p>
       </Col>
-    </Row>
+    </Row> 
+    </Container>
   );
 };
 

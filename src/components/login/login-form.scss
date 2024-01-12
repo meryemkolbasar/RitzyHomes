@@ -6,10 +6,20 @@
     box-sizing: border-box;
   }
 
+.container {   
 .login-container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
    justify-content: center;
-   padding: 150px 0px;
+   padding: 200px 0px;
+   min-height: 80vh;
+   
+   > * {
+    margin-bottom: 100px; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif
   }
+  
  
   .email-title,
   .password-title {
@@ -18,11 +28,11 @@
 
 .email-input,
 .password-input {
-  width: 390px;
+  width: 450px;
   background-color: $color13;
   border: none;
   border-bottom: 1.5px solid black;
-  height: 40px;
+  height: 50px;
   outline: none;
   text-indent: 5px;
   caret-color: gray;
@@ -33,28 +43,27 @@
   text-decoration: none;
   color: black;
   white-space: nowrap;
-  margin: 263px;
+  margin: 308px;
 }
 
   
   .login-button {
    background-color: $color14;
    color: white;
-   padding: 10px 80px ;
-   font-size: medium;
-   margin-left: 80px;
+   padding: 15px 98px ;
+   font-size: large;
+   margin-left: 97px;
    border: none;
-   
   }
     
   .register-now-paragraph {
     white-space: nowrap;
-    margin-left: 30px;
-    
+    margin-left: 55px;
+    font-size: 16px;
   }
 
   .register-now-link {
     color: black;
-    
   }
-  
+}
+}
