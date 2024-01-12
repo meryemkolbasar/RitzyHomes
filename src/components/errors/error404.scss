@@ -7,7 +7,7 @@
 .error404 {
     flex: 1;
     padding-left: 80px; 
-    margin: auto;
+    text-align: left;
 }
 
 
@@ -20,16 +20,17 @@
   .error404-title {
     color: #6cb534;
     font-size: 43px;
-    text-align: left;
     white-space: nowrap;
   }
 
   .error-message {
     color: #000000;
     font-size: 16.5px;
-    text-align: left;
-    font-weight: 640;
+    font-weight: 640px;
     white-space: nowrap;
+    margin-left: 20px;
+    
+    
   }
 
 
