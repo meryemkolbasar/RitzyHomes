@@ -4,7 +4,7 @@ import './add-new-advert.scss'
 const AddNewAdvert = () => {
   return (
     <>
-     
+   
     </>
   )
 }

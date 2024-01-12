@@ -1,6 +1,6 @@
 import React from "react";
-import PageHeader from "../components/common/page-header";
-import AddNewAdvert from "../components/new-advert/add-new-advert";
+import PageHeader from "../../components/common/page-header";
+import AddNewAdvert from "../../components/advert/add-new-advert";
 
 const AddNewAdvertPage = () => {
   return (

@@ -60,7 +60,7 @@ const Menubar = () => {
           </Offcanvas.Body>
         </Navbar.Offcanvas>
       
-      </Container>
+      </Container> 
     </Navbar>
   );
 };

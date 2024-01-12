@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card, Image } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import "./error401.scss";
 
@@ -10,7 +10,11 @@ const Error401 = () => {
       <Row className="g-5">
         <div className="page-content">
           <Col md={6} className="text-start">
-            <Image src="images/errors/401.png" alt="401" className="error401-image" />
+            <Image
+              src="images/errors/401.png"
+              alt="401"
+              className="error401-image"
+            />
           </Col>
           <Col md={6}>
             <Card className="text-center error401 border-0">
@@ -22,9 +26,13 @@ const Error401 = () => {
               </p>
               <br />
               <Col md={7}>
-                <Link to="/login"className="text-center error401-button" style={{textDecoration:'none'}}>
+                <Link
+                  to="/login"
+                  className="text-center error401-button"
+                  style={{ textDecoration: "none" }}
+                >
                   LOGOUT
-                </Link> 
+                </Link>
               </Col>
             </Card>
           </Col>
