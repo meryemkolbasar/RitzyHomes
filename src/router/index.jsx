@@ -9,8 +9,12 @@ import Error401Page from "../pages/errors/error401-page";
 import Error404Page from "../pages/errors/error404-page";
 import LoginPage from "../pages/login-page";
 import RegisterPage from "../pages/register-page";
-import AddNewAdvertPage from "../pages/add-new-advert-page";
-import EditAdvertPage from "../pages/edit-advert-page";
+import AddNewAdvertPage from "../pages/advert/add-new-advert-page";
+import EditAdvertPage from "../pages/advert/edit-advert-page";
+import ForgotPasswordPage from "../pages/password/forgot-password-page";
+import ChangePasswordPage from "../pages/password/change-password-page";
+import ResetPasswordPage from '../pages/password/reset-password-page'
+import AdvertsPage from "../pages/advert/adverts-page";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,11 +45,6 @@ const router = createBrowserRouter([
         element: <Error401Page />,
       },
       {
-        path: "*",
-        element: <Error404Page />,
-      },
-
-      {
         path: "login",
         element: <LoginPage />,
       },
@@ -60,7 +59,27 @@ const router = createBrowserRouter([
       {
         path: "edit-advert",
         element: <EditAdvertPage />
-      }     
+      },
+      {
+        path: "forgot-password",
+        element: <ForgotPasswordPage/>
+      },
+      {
+        path: "change-password",
+        element: <ChangePasswordPage/>
+      },
+      {
+        path: "reset-password",
+        element: <ResetPasswordPage/>
+      } ,
+      {
+        path: "adverts",
+        element: <AdvertsPage/>
+      },
+      {
+        path: "*",
+        element: <Error404Page />,
+      }                 
     ],
   },
 ]);
