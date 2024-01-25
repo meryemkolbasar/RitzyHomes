@@ -21,7 +21,7 @@ const ChangePassword = () => {
         setResetSuccess(false);
         navigate('/'); 
         // Değiştirmeniz gereken sayfa yolunu ekleyin
-      }, 3000);
+      }, 2000);
     } catch (error) {
       console.error('An error occurred while changing password:', error);
       // Hata durumunda kullanıcıya bildirim gösterme.
