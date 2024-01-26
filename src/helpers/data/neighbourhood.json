@@ -1,0 +1,136 @@
+{
+    "neighbourhoodTypes": [
+      {
+        "id": 1,
+        "name": "Quiet and Calm",
+        "description": "Ideal neighborhood type for those who want to relax and live a peaceful life."
+      },
+      {
+        "id": 2,
+        "name": "Vibrant and Active",
+        "description": "Energetic neighborhood type designed for those who love social interaction and city life."
+      },
+      {
+        "id": 3,
+        "name": "Artistic and Cultural",
+        "description": "Neighborhood type tailored for those interested in art and cultural activities."
+      },
+      {
+        "id": 4,
+        "name": "Green and Nature-Focused",
+        "description": "Perfect for nature enthusiasts, offering a green and eco-friendly environment."
+      }
+      
+    ],
+    "activities": [
+      {
+        "id": 1,
+        "name": "Cafes and Restaurants",
+        "description": "A variety of dining options including cafes and restaurants for socializing and enjoying meals."
+      },
+      {
+        "id": 2,
+        "name": "Sports and Exercise",
+        "description": "Facilities and areas dedicated to sports and exercise activities for a healthy lifestyle."
+      },
+      {
+        "id": 3,
+        "name": "Art and Cultural Events",
+        "description": "Engaging in artistic and cultural events to stimulate creativity and appreciation."
+      },
+      {
+        "id": 4,
+        "name": "Shopping and Markets",
+        "description": "Access to shopping centers and local markets for convenient and enjoyable shopping experiences."
+      }
+      
+    ],
+    "communityAndEvents": [
+      {
+        "id": 1,
+        "name": "Neighbourhood Picnics",
+        "description": "Organizing communal picnics to strengthen community bonds and create memorable moments."
+      },
+      {
+        "id": 2,
+        "name": "Yoga Classes",
+        "description": "Providing yoga classes for residents to maintain physical and mental well-being."
+      },
+      {
+        "id": 3,
+        "name": "Community Garden",
+        "description": "Establishing a shared garden where residents can participate in gardening and foster a sense of community."
+      },
+      {
+        "id": 4,
+        "name": "Book Club Meetings",
+        "description": "Hosting book club gatherings to encourage reading and intellectual discussions within the neighbourhood."
+      }
+     
+    ],
+    "localServices": [
+      {
+        "id": 1,
+        "name": "Local Library",
+        "description": "Access to a nearby library for residents to borrow books and engage in learning activities."
+      },
+      {
+        "id": 2,
+        "name": "Health Center",
+        "description": "Availability of a health center providing basic medical services for the well-being of residents."
+      },
+      {
+        "id": 3,
+        "name": "Post Office",
+        "description": "Convenient access to a local post office for mailing and receiving packages."
+      },
+      {
+        "id": 4,
+        "name": "Public Transportation Stops",
+        "description": "Proximity to public transportation stops to facilitate easy commuting for residents."
+      }
+      
+    ],
+    "securityAndConvenience": [
+      {
+        "id": 1,
+        "name": "Safe and Friendly",
+        "description": "A secure and welcoming environment where residents feel safe and connected with their neighbours."
+      },
+      {
+        "id": 2,
+        "name": "Peaceful and Family-Focused",
+        "description": "A tranquil neighbourhood with a focus on family-friendly amenities and activities."
+      },
+      {
+        "id": 3,
+        "name": "Fast Access and Transportation",
+        "description": "Efficient transportation options and quick access to essential services for convenience."
+      },
+      {
+        "id": 4,
+        "name": "Walking Paths and Parks",
+        "description": "Well-designed walking paths and nearby parks for residents to enjoy outdoor activities and nature."
+      }
+     
+    ],
+    "cultureAndHistory": [
+      {
+        "id": 1,
+        "name": "Historical Sites",
+        "description": "Preservation of historical sites within the neighbourhood, offering a glimpse into the area's past."
+      },
+      {
+        "id": 2,
+        "name": "Local Festivals and Events",
+        "description": "Celebration of local festivals and events, fostering a sense of community and shared traditions."
+      },
+      {
+        "id": 3,
+        "name": "Neighbourhood Story and Traditions",
+        "description": "Sharing the history and traditions of the neighbourhood, creating a strong sense of identity and belonging."
+      }
+      
+    ]
+  }
+  
