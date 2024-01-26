@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Col, Row, Container, Form, Button } from "react-bootstrap";
 import countriesData from '../../helpers/data/countries.json';
 import citiesData from '../../helpers/data/cities.json';
+import neighbourhoodData from '../../helpers/data/neighbourhood.json';
+import propertyTypesData  from '../../helpers/data/typeproperties.json';
 import "./add-new-advert.scss";
 
 const AddNewAdvert = () => {
