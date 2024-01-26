@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Col, Row, Container, Form, Button } from "react-bootstrap";
+import countriesData from '../../helpers/data/countries.json';
+import citiesData from '../../helpers/data/cities.json';
 import "./add-new-advert.scss";
 
 const AddNewAdvert = () => {
@@ -137,21 +139,29 @@ const AddNewAdvert = () => {
             <Form.Group controlId="formAdvertType">
               <Form.Label>Advert Type</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="For Sale"
+                as="select"
                 value={commonInfo.advertType}
                 onChange={(e) => setCommonInfo({ ...commonInfo, advertType: e.target.value })}
-              />
+              >
+                <option value="">Select Advert Type</option>
+                <option value="For Sale">For Sale</option>
+                <option value="For Rent">For Rent</option>
+                {/* Diğer seçenekleri buraya ekle */}
+              </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="formCategory">
               <Form.Label>Category</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Villa"
+                as="select"
                 value={commonInfo.category}
                 onChange={(e) => setCommonInfo({ ...commonInfo, category: e.target.value })}
-              />
+              >
+                <option value="">Select Category</option>
+                <option value="Villa">Villa</option>
+                <option value="Apartment">Apartment</option>
+                {/* Diğer seçenekleri buraya ekle */}
+              </Form.Control>
             </Form.Group>
           </Form>
         </Col>
@@ -161,30 +171,42 @@ const AddNewAdvert = () => {
           <Form>
             <h5>Address Information</h5>
             <Form.Group controlId="country">
-              <Form.Label>Country</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter country"
-                value={addressInfo.country}
-                onChange={(e) => setAddressInfo({ ...addressInfo, country: e.target.value })}
-              />
+            <Form.Label>Country</Form.Label>
+  <Form.Control
+    as="select"
+    value={addressInfo.country}
+    onChange={(e) => setAddressInfo({ ...addressInfo, country: e.target.value, city: "" })}
+  >
+    <option value="">Choose</option>
+    {countriesData.map((country, index) => (
+      <option key={index} value={country.en_short_name}>
+        {country.en_short_name}
+      </option>
+    ))}
+              </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="city">
-              <Form.Label>City</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter city"
-                value={addressInfo.city}
-                onChange={(e) => setAddressInfo({ ...addressInfo, city: e.target.value })}
-              />
+      <Form.Label>City</Form.Label>
+      <Form.Control
+        as="select"
+        value={addressInfo.city}
+        onChange={(e) => setAddressInfo({ ...addressInfo, city: e.target.value })}
+      >
+        <option value="">Choose</option>
+        {citiesData[addressInfo.country]?.cities.map((city, index) => (
+          <option key={index} value={city}>
+            {city}
+          </option>
+        ))}
+              </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="neighbourhood">
               <Form.Label>Neighbourhood</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter neighbourhood"
+                placeholder="Choose"
                 value={addressInfo.neighbourhood}
                 onChange={(e) => setAddressInfo({ ...addressInfo, neighbourhood: e.target.value })}
               />
