@@ -1,0 +1,15 @@
+@use "../../styles/variables" as v;
+
+.visit {
+  display: flex !important;
+  text-align: center;
+  justify-content: space-between;
+
+  .card {
+    border-radius: 100%;
+
+    border: 2px solid v.$color9;
+
+    background-color: v.$color9;
+  }
+}

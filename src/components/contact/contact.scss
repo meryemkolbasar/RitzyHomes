@@ -1,0 +1,57 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+
+.contact {
+    display: flex;
+  
+    @media (max-width:768px) {
+        display: block !important;
+    }
+    
+   
+
+   
+    
+
+    .formx {
+        z-index: 1;
+        border-radius: 5%;
+        background-color: v.$color3;
+        justify-content: center;
+        width: 50%;
+
+
+        @include m.transform(translateY(-400px));
+
+        @media (max-width: 768px) {
+            object-fit: contain;
+            width: 59%;
+            font-size: 13px;
+            margin-left: 110px;
+            align-items: center;
+            justify-content: center;
+            padding-left: 45px;
+
+            @include m.transform(translateY(-200px));
+            
+        }
+
+        
+    
+        
+   
+    }
+
+    .text {
+        
+        border: none;
+    
+       @media (max-width:768px) {
+        
+       }
+        
+    }
+
+   
+
+}

@@ -1,0 +1,32 @@
+@use "../../styles/variables" as v;
+
+
+.contact-form {
+   
+     h4{
+      width: 75%;
+     }
+     
+     button{
+       
+        align-items: center;
+
+        @media (max-width: 768px) {
+           width: 85%;
+         }
+     }
+
+     .recaptcha{
+
+      transform:scale(0.77);
+      transform-origin:0 0;
+    
+        @media (max-width: 500px) {
+             
+                transform:scale(0.47);
+                transform-origin:0 0;
+               
+            
+        }
+     }
+}

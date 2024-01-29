@@ -1,0 +1,17 @@
+[
+    {
+        "name": "PARİS",
+        "address": "1301 2nd Ave, Seattle, WA 98101",
+        "phone": "(315) 905-2321"
+    },
+    {
+        "name": "LONDON",
+        "address":"1301 2nd Ave, Seattle, WA 98101",
+        "phone":"(315) 905-2321"
+    },
+    {
+        "name": "İSTANBUL",
+        "address":"1301 2nd Ave, Seattle, WA 98101",
+        "phone":"(315) 905-2321"
+    }
+]

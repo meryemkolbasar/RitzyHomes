@@ -17,6 +17,7 @@ import AdvertsPage from "../pages/advert/adverts-page";
 import AdvertDetailsPage from "../pages/advert/advert-details-page";
 import Error404Page from "../pages/errors/error404-page";
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "contact",
-        element: <ContactPage />,
+        element: <ContactPage/>
       },
       {
         path: "profile",
