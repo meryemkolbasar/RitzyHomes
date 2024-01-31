@@ -7,6 +7,7 @@ const RegisterPage = () => {
   return (
     <>
       <PageHeader title="REGISTER" />
+      <Spacer />
       <RegisterForm />
       <Spacer />
     </>
