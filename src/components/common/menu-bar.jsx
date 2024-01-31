@@ -24,7 +24,7 @@ const Menubar = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="justify-content-left flex-grow-1 pe-3" style={{fontWeight:"bold"}}>
+            <Nav className="justify-content-center flex-grow-1 pe-3" style={{fontWeight:"bold"}}>
               <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
