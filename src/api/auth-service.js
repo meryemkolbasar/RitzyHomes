@@ -9,7 +9,7 @@ export const AuthService = {
           },
           body: JSON.stringify(credentials),
         });
-  
+
         if (response.ok) {
           const user = await response.json();
           return { success: true, user };
@@ -24,4 +24,3 @@ export const AuthService = {
     },
     // Diğer kimlik doğrulama işlemleri (örneğin logout) burada eklenebilir
   };
-  
