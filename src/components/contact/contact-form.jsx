@@ -3,7 +3,7 @@ import { Button, Col, Form, Row } from "react-bootstrap";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import ButtonSpinner from "../common/button-spinner";
-import { createMessage } from "../../api/contact-service";
+import { createMessage } from "../../api/admin/contact-service";
 import { swalAlert } from "../../helpers/swal";
 import "./contact-form.scss";
 import ReCAPTCHA from "react-google-recaptcha";
