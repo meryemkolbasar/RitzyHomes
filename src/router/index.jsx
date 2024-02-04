@@ -97,6 +97,16 @@ const router = createBrowserRouter([
         path: "advert-details",
         element: <AdvertDetailsPage />,
       },
+      /*Admin sayfalari goruntulenmek icin buraya import edildi, API baglandiginda admin kismina import edilecek. */
+      {
+        path: "admin-advert-type-new",
+        element:  <AdminAdvertTypeNewPage />
+      },
+      {
+        path: "admin-advert-type-edit",
+        element: <AdminAdvertTypeEditPage />
+      },
+        
       {
         path: "dashboard",
         children: [
@@ -156,7 +166,7 @@ const router = createBrowserRouter([
                 </PrivateRoute>
             ),
           },
-          {
+          /*{
             path: "admin-advert-type-new",
             element: (
                 <PrivateRoute>
@@ -171,7 +181,7 @@ const router = createBrowserRouter([
                   <AdminAdvertTypeEditPage />
               </PrivateRoute>
             ),
-          },
+          },*/
           {
             path: "admin-users",
             element: (
