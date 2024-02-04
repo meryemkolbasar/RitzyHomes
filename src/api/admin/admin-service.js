@@ -1,6 +1,6 @@
 import axios from "axios";
-import { config } from "../helpers/config";
-import { getAuthHeader } from "../helpers/auth-header";
+import { config } from "../../helpers/config";
+import { getAuthHeader } from "../../helpers/auth-header";
 
 // API'nin temel URL'sini config dosyasından alıyoruz.
 const API_URL = config.api.baseUrl; // Burayı bir yer tutucu olarak birakiyoruz.
