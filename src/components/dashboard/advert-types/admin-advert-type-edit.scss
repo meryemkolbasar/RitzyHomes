@@ -1,0 +1,65 @@
+@import '/src/styles/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.container {
+.advert-type-edit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 90vh;
+   
+    > * {
+        margin-top: -500px
+      }
+
+.title-input {
+    width: 525px;
+    background-color: $color13;
+    border: none;
+    height: 50px;
+    outline: none;
+    text-indent: 5px;
+    caret-color: gray;
+}
+
+.save-button,
+.delete-button {
+      background-color: $color14;
+      color: white;
+      padding: 6px 25px;
+      font-size: 22px;
+      border: none;
+      width: 30%;
+      max-width: 185px;
+      white-space: nowrap;
+      margin-top: 50px;
+      border-radius: 9px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .delete-button {
+      background-color: rgb(153, 152, 152);
+      margin-left: 195px;
+    }
+
+ .delete-button:hover {
+    background-color: rgb(156, 156, 156);
+    
+}
+   .save-button {
+    margin-left: 15px;
+   }
+    
+.save-button:hover {
+ background-color: #78c950;
+}
+
+
+  }
+}
