@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Col, Row, Container, Form, Button } from "react-bootstrap";
-import countriesData from '../../helpers/data/countries.json';
-import citiesData from '../../helpers/data/cities.json';
-import neighbourhoodData from '../../helpers/data/neighbourhood.json';
-import propertyTypesData  from '../../helpers/data/typeproperties.json';
+import countriesData from "../../helpers/data/countries.json";
+import citiesData from "../../helpers/data/cities.json";
+import neighbourhoodData from "../../helpers/data/neighbourhood.json";
+import typeProperties from "../../helpers/data/typeproperties.json";
 import "./add-new-advert.scss";
 
 const AddNewAdvert = () => {
@@ -55,7 +55,9 @@ const AddNewAdvert = () => {
 
   const handleImageDelete = () => {
     if (selectedImages.length > 0) {
-      const remainingImages = images.filter((_, index) => !selectedImages.includes(index));
+      const remainingImages = images.filter(
+        (_, index) => !selectedImages.includes(index)
+      );
       setImages(remainingImages);
       setSelectedImages([]);
     } else {
@@ -106,7 +108,6 @@ const AddNewAdvert = () => {
   return (
     <Container>
       <Row className="add-new-advert-container">
-        
         <Col md={12}>
           <Form>
             <h5>Common Information</h5>
@@ -115,7 +116,9 @@ const AddNewAdvert = () => {
               <Form.Control
                 type="text"
                 value={commonInfo.title}
-                onChange={(e) => setCommonInfo({ ...commonInfo, title: e.target.value })}
+                onChange={(e) =>
+                  setCommonInfo({ ...commonInfo, title: e.target.value })
+                }
               />
             </Form.Group>
 
@@ -125,7 +128,9 @@ const AddNewAdvert = () => {
                 as="textarea"
                 rows={3}
                 value={commonInfo.description}
-                onChange={(e) => setCommonInfo({ ...commonInfo, description: e.target.value })}
+                onChange={(e) =>
+                  setCommonInfo({ ...commonInfo, description: e.target.value })
+                }
               />
             </Form.Group>
 
@@ -134,7 +139,9 @@ const AddNewAdvert = () => {
               <Form.Control
                 type="text"
                 value={commonInfo.price}
-                onChange={(e) => setCommonInfo({ ...commonInfo, price: e.target.value })}
+                onChange={(e) =>
+                  setCommonInfo({ ...commonInfo, price: e.target.value })
+                }
               />
             </Form.Group>
 
@@ -143,12 +150,13 @@ const AddNewAdvert = () => {
               <Form.Control
                 as="select"
                 value={commonInfo.advertType}
-                onChange={(e) => setCommonInfo({ ...commonInfo, advertType: e.target.value })}
+                onChange={(e) =>
+                  setCommonInfo({ ...commonInfo, advertType: e.target.value })
+                }
               >
                 <option value="">Select Advert Type</option>
                 <option value="For Sale">For Sale</option>
                 <option value="For Rent">For Rent</option>
-                {/* Diğer seçenekleri buraya ekle */}
               </Form.Control>
             </Form.Group>
 
@@ -157,61 +165,83 @@ const AddNewAdvert = () => {
               <Form.Control
                 as="select"
                 value={commonInfo.category}
-                onChange={(e) => setCommonInfo({ ...commonInfo, category: e.target.value })}
+                onChange={(e) =>
+                  setCommonInfo({ ...commonInfo, category: e.target.value })
+                }
               >
                 <option value="">Select Category</option>
-                <option value="Villa">Villa</option>
-                <option value="Apartment">Apartment</option>
-                {/* Diğer seçenekleri buraya ekle */}
+                {typeProperties.map((property) => (
+                  <option key={property.id} value={property.title}>
+                    {property.title}
+                  </option>
+                ))}
               </Form.Control>
             </Form.Group>
           </Form>
         </Col>
 
-        
         <Col md={12}>
           <Form>
             <h5>Address Information</h5>
             <Form.Group controlId="country">
-            <Form.Label>Country</Form.Label>
-  <Form.Control
-    as="select"
-    value={addressInfo.country}
-    onChange={(e) => setAddressInfo({ ...addressInfo, country: e.target.value, city: "" })}
-  >
-    <option value="">Choose</option>
-    {countriesData.map((country, index) => (
-      <option key={index} value={country.en_short_name}>
-        {country.en_short_name}
-      </option>
-    ))}
+              <Form.Label>Country</Form.Label>
+              <Form.Control
+                as="select"
+                value={addressInfo.country}
+                onChange={(e) =>
+                  setAddressInfo({
+                    ...addressInfo,
+                    country: e.target.value,
+                    city: "",
+                  })
+                }
+              >
+                <option value="">Choose</option>
+                {countriesData.map((country, index) => (
+                  <option key={index} value={country.en_short_name}>
+                    {country.en_short_name}
+                  </option>
+                ))}
               </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="city">
-      <Form.Label>City</Form.Label>
-      <Form.Control
-        as="select"
-        value={addressInfo.city}
-        onChange={(e) => setAddressInfo({ ...addressInfo, city: e.target.value })}
-      >
-        <option value="">Choose</option>
-        {citiesData[addressInfo.country]?.cities.map((city, index) => (
-          <option key={index} value={city}>
-            {city}
-          </option>
-        ))}
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                as="select"
+                value={addressInfo.city}
+                onChange={(e) =>
+                  setAddressInfo({ ...addressInfo, city: e.target.value })
+                }
+              >
+                <option value="">Choose</option>
+                {citiesData[addressInfo.country]?.cities.map((city, index) => (
+                  <option key={index} value={city}>
+                    {city}
+                  </option>
+                ))}
               </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="neighbourhood">
               <Form.Label>Neighbourhood</Form.Label>
               <Form.Control
-                type="text"
-                placeholder="Choose"
+                as="select"
                 value={addressInfo.neighbourhood}
-                onChange={(e) => setAddressInfo({ ...addressInfo, neighbourhood: e.target.value })}
-              />
+                onChange={(e) =>
+                  setAddressInfo({
+                    ...addressInfo,
+                    neighbourhood: e.target.value,
+                  })
+                }
+              >
+                <option value="">Choose</option>
+                {neighbourhoodData.neighbourhoodTypes.map((neighbourhood) => (
+                  <option key={neighbourhood.name} value={neighbourhood.name}>
+                    {neighbourhood.name}
+                  </option>
+                ))}
+              </Form.Control>
             </Form.Group>
 
             <Form.Group controlId="location">
@@ -220,7 +250,9 @@ const AddNewAdvert = () => {
                 type="text"
                 placeholder="Enter location"
                 value={addressInfo.location}
-                onChange={(e) => setAddressInfo({ ...addressInfo, location: e.target.value })}
+                onChange={(e) =>
+                  setAddressInfo({ ...addressInfo, location: e.target.value })
+                }
               />
             </Form.Group>
           </Form>
@@ -235,7 +267,9 @@ const AddNewAdvert = () => {
                 type="text"
                 placeholder="Enter floor"
                 value={properties.floor}
-                onChange={(e) => setProperties({ ...properties, floor: e.target.value })}
+                onChange={(e) =>
+                  setProperties({ ...properties, floor: e.target.value })
+                }
               />
             </Form.Group>
 
@@ -245,7 +279,9 @@ const AddNewAdvert = () => {
                 type="text"
                 placeholder="Enter bedroom count"
                 value={properties.bedroom}
-                onChange={(e) => setProperties({ ...properties, bedroom: e.target.value })}
+                onChange={(e) =>
+                  setProperties({ ...properties, bedroom: e.target.value })
+                }
               />
             </Form.Group>
 
@@ -255,7 +291,9 @@ const AddNewAdvert = () => {
                 type="text"
                 placeholder="Enter bathroom count"
                 value={properties.bathroom}
-                onChange={(e) => setProperties({ ...properties, bathroom: e.target.value })}
+                onChange={(e) =>
+                  setProperties({ ...properties, bathroom: e.target.value })
+                }
               />
             </Form.Group>
 
@@ -265,7 +303,9 @@ const AddNewAdvert = () => {
                 type="text"
                 placeholder="Enter garage count"
                 value={properties.garage}
-                onChange={(e) => setProperties({ ...properties, garage: e.target.value })}
+                onChange={(e) =>
+                  setProperties({ ...properties, garage: e.target.value })
+                }
               />
             </Form.Group>
 
@@ -275,7 +315,9 @@ const AddNewAdvert = () => {
                 type="text"
                 placeholder="Enter year of built"
                 value={properties.yearOfBuilt}
-                onChange={(e) => setProperties({ ...properties, yearOfBuilt: e.target.value })}
+                onChange={(e) =>
+                  setProperties({ ...properties, yearOfBuilt: e.target.value })
+                }
               />
             </Form.Group>
 
@@ -285,33 +327,33 @@ const AddNewAdvert = () => {
                 type="text"
                 placeholder="Enter size"
                 value={properties.size}
-                onChange={(e) => setProperties({ ...properties, size: e.target.value })}
+                onChange={(e) =>
+                  setProperties({ ...properties, size: e.target.value })
+                }
               />
             </Form.Group>
           </Form>
         </Col>
 
-        
         <Col md={12}>
           <div>
             <h5>Images</h5>
             {images.map((image, index) => (
-              <div key={index} className={`image-container ${selectedImages.includes(index) ? 'selected' : ''}`}>
+              <div
+                key={index}
+                className={`image-container ${
+                  selectedImages.includes(index) ? "selected" : ""
+                }`}
+              >
                 <img
                   src={image}
                   alt={`image-${index}`}
                   onClick={() => handleToggleSelect(index)}
                 />
-                <Button
-                  variant="outline-primary"
-                  onClick={handleSetAsFeatured}
-                >
+                <Button variant="outline-primary" onClick={handleSetAsFeatured}>
                   Set as Featured
                 </Button>
-                <Button
-                  variant="outline-danger"
-                  onClick={handleImageDelete}
-                >
+                <Button variant="outline-danger" onClick={handleImageDelete}>
                   Delete
                 </Button>
               </div>
@@ -322,10 +364,9 @@ const AddNewAdvert = () => {
           </div>
         </Col>
 
-       
         <Col md={12} className="text-center">
           <Button variant="success" onClick={handleCreateAdvert}>
-            Create 
+            Create
           </Button>
         </Col>
       </Row>

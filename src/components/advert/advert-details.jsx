@@ -68,6 +68,7 @@ const AdvertDetails = () => {
             </p>
           </div>
           <br />
+// 4 col display flex 
           <div className="advert-details">
             <h5 className="details-title">Details</h5>
             <p className="details-content">
@@ -79,7 +80,7 @@ const AdvertDetails = () => {
             <div className="furniture">Furniture Yes</div>
             <div className="maintenance">Maintenance fee $80</div>
             <div className="terrace">Terrace 2</div>
-            </p>
+            </p> 
           </div>
           <br />
           <div className="advert-location">
