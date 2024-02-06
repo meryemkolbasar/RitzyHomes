@@ -13,7 +13,7 @@
   justify-content: space-between; 
   
 .advert-description,
-.advert-details, 
+.details-container,
 .advert-location,
 .advert-photos{
   align-items: left;
@@ -21,7 +21,7 @@
 }
 
 .advert-description,
-.advert-details, 
+.details-container,
 .advert-location,
 .advert-photos,
 .tour-schedule {
@@ -92,18 +92,15 @@
 
 
 
-.advert-details{
+.details-container{
   display: flex;
   flex-direction: column;
 
-.details-content {
-  
-}
-.details-title,
-.details-content {
+
+.details-title {
+  text-align: left;
+  margin-top: 20px; 
   margin-left: 40px;
-  white-space: pre-wrap;
-  ;
 }
 
  .size,
@@ -112,26 +109,70 @@
  .garage {
    text-align: left;
    margin-top: 20px; 
+   margin-left: 40px;
+   font-weight:550;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size: 19px;
  }
 
  .year-of-built,
  .furniture,
  .maintenance,
  .terrace {
-   text-align: right;
-   margin-top: 20px;
+  text-align: left;
+  margin-top: 20px; 
+  margin-left: 150px;
+  font-weight:550;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 19px;
+  white-space: nowrap;
  }
 
- 
-.details-title {
-  font-weight: bold;
-  margin-top: 50px;
-  }
+ .year-of-built {
+  margin-top: 63px; 
+ }
+
+.year,
+.yes,
+.fee,
+.terrace-count{
+  text-align: left;
+  margin-top: 20px; 
+  margin-left: 250px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 19px;
+}
+
+.terrace-count {
+  margin-left: 270px;
+}
+.year{
+  margin-top: 63px; 
+  margin-left: 240px;
 }
 
 
+.number-1,
+.number-2,
+.number-3,
+.number-4{
+  text-align: left;
+  margin-top: 20px; 
+  margin-left: 102px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 19px;
+}
 
+.number-1 {
+  margin-top: 63px;
+}
 
+.number-2,
+.number-3,
+.number-4 {
+  margin-left: 135px;
+}
+}
 
 .advert-location {
   margin-bottom: 200px;
@@ -211,6 +252,6 @@
   }
 }
 
-
+    
   }
 }

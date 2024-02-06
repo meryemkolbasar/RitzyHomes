@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Col, Row, Container, Image } from "react-bootstrap"; 
+import { Col, Row, Container, Image } from "react-bootstrap";
 import "./advert-details.scss";
 
 const AdvertDetails = () => {
   // State for tour scheduling
   const [tourDate, setTourDate] = useState("");
   const [tourTime, setTourTime] = useState("");
-  const [isEditingTourTime, setIsEditingTourTime] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
 
   // Function to handle tour submission
@@ -15,7 +14,6 @@ const AdvertDetails = () => {
     // You can use tourDate and tourTime state values here
     console.log("Tour Request Submitted:", tourDate, tourTime);
   };
-
 
   const handleImageClick = (index) => {
     setSelectedImage(index);
@@ -34,7 +32,7 @@ const AdvertDetails = () => {
       <Row className="advert-details-container">
         <Col md={8}>
           <div className="advert-photos">
-           <Image
+            <Image
               src={images[selectedImage]}
               alt={`villa-${selectedImage + 1}`}
               className={`villa villa-${selectedImage + 1} selected`}
@@ -68,20 +66,42 @@ const AdvertDetails = () => {
             </p>
           </div>
           <br />
-// 4 col display flex 
-          <div className="advert-details">
-            <h5 className="details-title">Details</h5>
-            <p className="details-content">
-            <div className="size">Size 120m2</div> 
-            <div className="bathrooms">Bathrooms 2</div>
-            <div className="bedrooms">Bedrooms 4</div>
-            <div className="garage">Garage 1</div>
-            <div className="year-of-built">Year of built 2022</div>
-            <div className="furniture">Furniture Yes</div>
-            <div className="maintenance">Maintenance fee $80</div>
-            <div className="terrace">Terrace 2</div>
-            </p> 
+
+          <div className="details-container">
+            <br />
+            <Row>
+              <Col md={2}>
+                <h4 className="details-title">Details</h4>
+                <div className="size">Size </div>
+                <div className="bathrooms">Bathrooms </div>
+                <div className="bedrooms">Bedrooms </div>
+                <div className="garage">Garage </div>
+              </Col>
+
+              <Col md={2}>
+                <div className="number-1">120m²</div>
+                <div className="number-2">2</div>
+                <div className="number-3">4</div>
+                <div className="number-4">1</div>
+              </Col>
+
+              <Col md={2}>
+                <div className="year-of-built">Year of built</div>
+                <div className="furniture">Furniture</div>
+                <div className="maintenance">Maintenance fee</div>
+                <div className="terrace">Terrace</div>
+              </Col>
+
+              <Col className="details-2" md={2}>
+                <div className="year">2022</div>
+                <div className="yes">Yes</div>
+                <div className="fee">$80</div>
+                <div className="terrace-count">2</div>
+              </Col>
+            </Row>
+            <br />
           </div>
+
           <br />
           <div className="advert-location">
             <h5 className="location-title">Location</h5>
@@ -118,8 +138,9 @@ const AdvertDetails = () => {
 
             <input
               type="time"
-              value={tourTime}
+              value={tourTime || ""}
               onChange={(e) => setTourTime(e.target.value)}
+              placeholder="Tour time"
               className="time-input"
             />
             <br />
