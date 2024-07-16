@@ -3,7 +3,6 @@ import { Col, Row, Container, Form, Button } from "react-bootstrap";
 import countriesData from "../../helpers/data/countries.json";
 import citiesData from "../../helpers/data/cities.json";
 import neighbourhoodData from "../../helpers/data/neighbourhood.json";
-import typeProperties from "../../helpers/data/typeproperties.json";
 import "./add-new-advert.scss";
 
 const AddNewAdvert = () => {
@@ -65,9 +64,19 @@ const AddNewAdvert = () => {
     }
   };
 
-  const handleImageAdd = () => {
-    // Burada resim ekleme fonksiyonu implement edilebilir.
-    // Örneğin, kullanıcı bir dosya seçtiğinde bu dosya state'e eklenir.
+  const handleImageAdd = (e) => {
+    const selectedFile = e.target.files[0];
+
+    if (selectedFile) {
+      // Dosya seçildiyse burada işlemleri gerçekleştirin
+      console.log("Seçilen dosya:", selectedFile);
+
+      // Örneğin, dosyayı bir URL'e dönüştürüp images state'ine ekleyebilirsiniz
+      const fileUrl = URL.createObjectURL(selectedFile);
+      setImages([...images, fileUrl]);
+    } else {
+      console.log("Dosya seçilmedi");
+    }
   };
 
   const handleCreateAdvert = () => {
@@ -110,233 +119,270 @@ const AddNewAdvert = () => {
       <Row className="add-new-advert-container">
         <Col md={12}>
           <Form>
-            <h5>Common Information</h5>
-            <Form.Group controlId="formTitle">
-              <Form.Label>Title</Form.Label>
-              <Form.Control
-                type="text"
-                value={commonInfo.title}
-                onChange={(e) =>
-                  setCommonInfo({ ...commonInfo, title: e.target.value })
-                }
-              />
-            </Form.Group>
+            <h5 className="common-info">Common Information</h5>
+            <br />
+            <label htmlFor="formTitle">Title</label>
+            <br />
+            <input
+              className="title"
+              type="text"
+              value={commonInfo.title}
+              onChange={(e) =>
+                setCommonInfo({ ...commonInfo, title: e.target.value })
+              }
+            />
+            <br />
+            <br />
+            <label>Description</label>
+            <br />
+            <textarea
+              className="description"
+              type="text"
+              id="desc"
+              onChange={(e) => {
+                const inputValue = e.target.value;
+                const truncatedValue = inputValue
+                  .split(" ")
+                  .slice(0, 500)
+                  .join(" ");
 
-            <Form.Group controlId="formDescription">
-              <Form.Label>Description</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                value={commonInfo.description}
-                onChange={(e) =>
-                  setCommonInfo({ ...commonInfo, description: e.target.value })
-                }
-              />
-            </Form.Group>
+                setCommonInfo({ ...commonInfo, description: truncatedValue });
+              }}
+            />
 
-            <Form.Group controlId="formPrice">
-              <Form.Label>Price</Form.Label>
-              <Form.Control
-                type="text"
-                value={commonInfo.price}
-                onChange={(e) =>
-                  setCommonInfo({ ...commonInfo, price: e.target.value })
-                }
-              />
-            </Form.Group>
+            <br />
+            <br />
+            <Row>
+              <Col md={2}>
+                <label htmlFor="price">Price</label>
+                <br />
+                <input
+                  className="price"
+                  type="text"
+                  id="price"
+                  value={commonInfo.price}
+                  onChange={(e) =>
+                    setCommonInfo({ ...commonInfo, price: e.target.value })
+                  }
+                />
+              </Col>
 
-            <Form.Group controlId="formAdvertType">
-              <Form.Label>Advert Type</Form.Label>
-              <Form.Control
-                as="select"
-                value={commonInfo.advertType}
-                onChange={(e) =>
-                  setCommonInfo({ ...commonInfo, advertType: e.target.value })
-                }
-              >
-                <option value="">Select Advert Type</option>
-                <option value="For Sale">For Sale</option>
-                <option value="For Rent">For Rent</option>
-              </Form.Control>
-            </Form.Group>
+              <Col md={2}>
+                <label htmlFor="formAdvertType">Advert Type</label>
+                <br />
+                <select
+                  className="advert-type"
+                  id="formAdvertType"
+                  value={commonInfo.advertType}
+                  onChange={(e) =>
+                    setCommonInfo({
+                      ...commonInfo,
+                      advertType: e.target.value,
+                    })
+                  }
+                >
+                  <option value="For Sale">For Sale</option>
+                  <option value="For Rent">For Rent</option>
+                </select>
+              </Col>
 
-            <Form.Group controlId="formCategory">
-              <Form.Label>Category</Form.Label>
-              <Form.Control
-                as="select"
-                value={commonInfo.category}
-                onChange={(e) =>
-                  setCommonInfo({ ...commonInfo, category: e.target.value })
-                }
-              >
-                <option value="">Select Category</option>
-                {typeProperties.map((property) => (
-                  <option key={property.id} value={property.title}>
-                    {property.title}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
+              <Col md={2}>
+                <label htmlFor="formCategory">Category</label>
+                <br />
+                <select
+                  className="category"
+                  id="category"
+                  value={commonInfo.category}
+                  onChange={(e) =>
+                    setCommonInfo({ ...commonInfo, category: e.target.value })
+                  }
+                >
+                  <option value="Villa">Villa</option>
+                  <option value="House">House</option>
+                  <option value="Apartment">Apartment</option>
+                  <option value="Office">Office</option>
+                  <option value="Bungalow">Bungalow</option>
+                </select>
+              </Col>
+            </Row>
           </Form>
         </Col>
-
+        <br />
+        <br />
         <Col md={12}>
           <Form>
+            <br />
+            <br />
             <h5>Address Information</h5>
-            <Form.Group controlId="country">
-              <Form.Label>Country</Form.Label>
-              <Form.Control
-                as="select"
-                value={addressInfo.country}
-                onChange={(e) =>
-                  setAddressInfo({
-                    ...addressInfo,
-                    country: e.target.value,
-                    city: "",
-                  })
-                }
-              >
-                <option value="">Choose</option>
-                {countriesData.map((country, index) => (
-                  <option key={index} value={country.en_short_name}>
-                    {country.en_short_name}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
+            <br />
+            <Row>
+              <Col md={2}>
+                <label htmlFor="country">Country</label>
+                <select
+                  className="country"
+                  id="country"
+                  value={addressInfo.country}
+                  onChange={(e) =>
+                    setAddressInfo({
+                      ...addressInfo,
+                      country: e.target.value,
+                      city: "",
+                    })
+                  }
+                >
+                  <option value="">Choose</option>
+                  {countriesData.map((country, index) => (
+                    <option key={index} value={country.en_short_name}>
+                      {country.en_short_name}
+                    </option>
+                  ))}
+                </select>
+              </Col>
 
-            <Form.Group controlId="city">
-              <Form.Label>City</Form.Label>
-              <Form.Control
-                as="select"
-                value={addressInfo.city}
-                onChange={(e) =>
-                  setAddressInfo({ ...addressInfo, city: e.target.value })
-                }
-              >
-                <option value="">Choose</option>
-                {citiesData[addressInfo.country]?.cities.map((city, index) => (
-                  <option key={index} value={city}>
-                    {city}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Group controlId="neighbourhood">
-              <Form.Label>Neighbourhood</Form.Label>
-              <Form.Control
-                as="select"
-                value={addressInfo.neighbourhood}
-                onChange={(e) =>
-                  setAddressInfo({
-                    ...addressInfo,
-                    neighbourhood: e.target.value,
-                  })
-                }
-              >
-                <option value="">Choose</option>
-                {neighbourhoodData.neighbourhoodTypes.map((neighbourhood) => (
-                  <option key={neighbourhood.name} value={neighbourhood.name}>
-                    {neighbourhood.name}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
-
-            <Form.Group controlId="location">
-              <Form.Label>Location</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter location"
-                value={addressInfo.location}
-                onChange={(e) =>
-                  setAddressInfo({ ...addressInfo, location: e.target.value })
-                }
-              />
-            </Form.Group>
+              <Col md={2}>
+                <label htmlFor="city">City</label>
+                <select
+                  className="city"
+                  id="city"
+                  value={addressInfo.city}
+                  onChange={(e) =>
+                    setAddressInfo({ ...addressInfo, city: e.target.value })
+                  }
+                >
+                  <option value="">Choose</option>
+                  {citiesData[addressInfo.country]?.cities.map(
+                    (city, index) => (
+                      <option key={index} value={city}>
+                        {city}
+                      </option>
+                    )
+                  )}
+                </select>
+              </Col>
+              <Col md={2}>
+                <label htmlFor="neighbourhood">Neighbourhood</label>
+                <select
+                  className="neighbourhood"
+                  id="neighbourhood"
+                  value={addressInfo.neighbourhood}
+                  onChange={(e) =>
+                    setAddressInfo({
+                      ...addressInfo,
+                      neighbourhood: e.target.value,
+                    })
+                  }
+                >
+                  <option value="">Choose</option>
+                  {neighbourhoodData.neighbourhoodTypes.map((neighbourhood) => (
+                    <option key={neighbourhood.name} value={neighbourhood.name}>
+                      {neighbourhood.name}
+                    </option>
+                  ))}
+                </select>
+              </Col>
+            </Row>
+            <br />
+            <label htmlFor="location">Location</label>
+            <br />
+            <input
+              className="location"
+              type="text"
+              value={addressInfo.location}
+              onChange={(e) =>
+                setAddressInfo({ ...addressInfo, location: e.target.value })
+              }
+            />
           </Form>
         </Col>
-
+        <br />
+        <br />
         <Col md={12}>
           <Form>
+            <br />
+            <br />
             <h5>Properties</h5>
-            <Form.Group controlId="floor">
-              <Form.Label>Floor</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter floor"
-                value={properties.floor}
-                onChange={(e) =>
-                  setProperties({ ...properties, floor: e.target.value })
-                }
-              />
-            </Form.Group>
+            <br />
+            <Row>
+              <Col md={2}>
+                <label htmlFor="floor">Floor</label>
+                <input
+                  className="floor"
+                  type="text"
+                  value={properties.floor}
+                  onChange={(e) =>
+                    setProperties({ ...properties, floor: e.target.value })
+                  }
+                />
+              </Col>
+              <Col md={2}>
+                <label htmlFor="bedroom">Bedroom</label>
+                <input
+                  className="bedroom"
+                  type="text"
+                  value={properties.bedroom}
+                  onChange={(e) =>
+                    setProperties({ ...properties, bedroom: e.target.value })
+                  }
+                />
+              </Col>
+              <Col md={2}>
+                <label htmlFor="bathroom">Bathroom</label>
+                <input
+                  className="bathroom"
+                  type="text"
+                  value={properties.bathroom}
+                  onChange={(e) =>
+                    setProperties({ ...properties, bathroom: e.target.value })
+                  }
+                />
+              </Col>
+            </Row>
 
-            <Form.Group controlId="bedroom">
-              <Form.Label>Bedroom</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter bedroom count"
-                value={properties.bedroom}
-                onChange={(e) =>
-                  setProperties({ ...properties, bedroom: e.target.value })
-                }
-              />
-            </Form.Group>
-
-            <Form.Group controlId="bathroom">
-              <Form.Label>Bathroom</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter bathroom count"
-                value={properties.bathroom}
-                onChange={(e) =>
-                  setProperties({ ...properties, bathroom: e.target.value })
-                }
-              />
-            </Form.Group>
-
-            <Form.Group controlId="garage">
-              <Form.Label>Garage</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter garage count"
-                value={properties.garage}
-                onChange={(e) =>
-                  setProperties({ ...properties, garage: e.target.value })
-                }
-              />
-            </Form.Group>
-
-            <Form.Group controlId="yearOfBuilt">
-              <Form.Label>Year of Built</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter year of built"
-                value={properties.yearOfBuilt}
-                onChange={(e) =>
-                  setProperties({ ...properties, yearOfBuilt: e.target.value })
-                }
-              />
-            </Form.Group>
-
-            <Form.Group controlId="size">
-              <Form.Label>Size</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter size"
-                value={properties.size}
-                onChange={(e) =>
-                  setProperties({ ...properties, size: e.target.value })
-                }
-              />
-            </Form.Group>
+            <Row>
+              <Col md={2}>
+                <label htmlFor="garage">Garage</label>
+                <input
+                  className="garage"
+                  type="text"
+                  value={properties.garage}
+                  onChange={(e) =>
+                    setProperties({ ...properties, garage: e.target.value })
+                  }
+                />
+              </Col>
+              <Col md={2}>
+                <label htmlFor="yearOfBuilt">Year of Built</label>
+                <input
+                  className="year-of-built"
+                  type="text"
+                  value={properties.yearOfBuilt}
+                  onChange={(e) =>
+                    setProperties({
+                      ...properties,
+                      yearOfBuilt: e.target.value,
+                    })
+                  }
+                />
+              </Col>
+              <Col md={2}>
+                <label htmlFor="size">Size</label>
+                <input
+                  className="size"
+                  type="text"
+                  value={properties.size}
+                  onChange={(e) =>
+                    setProperties({ ...properties, size: e.target.value })
+                  }
+                />
+              </Col>
+            </Row>
           </Form>
         </Col>
 
         <Col md={12}>
           <div>
+            <br />
+            <br />
             <h5>Images</h5>
             {images.map((image, index) => (
               <div
@@ -346,28 +392,52 @@ const AddNewAdvert = () => {
                 }`}
               >
                 <img
+                  className="images"
                   src={image}
                   alt={`image-${index}`}
                   onClick={() => handleToggleSelect(index)}
+
                 />
-                <Button variant="outline-primary" onClick={handleSetAsFeatured}>
-                  Set as Featured
-                </Button>
-                <Button variant="outline-danger" onClick={handleImageDelete}>
-                  Delete
-                </Button>
+                <div className="image-buttons">
+                  <button
+                  className="image-button-1"
+                    variant="outline-primary"
+                    onClick={handleSetAsFeatured}
+                  >
+                    Set as Featured
+                  </button>
+                  <button className="image-button-2" variant="outline-danger"  onClick={() => handleImageDelete(index)}>
+                    Delete
+                  </button>
+                </div>
               </div>
             ))}
-            <Button variant="primary" onClick={handleImageAdd}>
-              Add Image
-            </Button>
+            <label className="add-img-btn" htmlFor="imageInput">
+              <input
+                type="file"
+                id="imageInput"
+                accept="image/*"
+                onChange={handleImageAdd}
+                style={{ display: "none" }}
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                className="add-img-btn"
+                viewBox="0 0 16 16"
+              >
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z" />
+              </svg>{" "}
+            </label>
           </div>
-        </Col>
 
-        <Col md={12} className="text-center">
-          <Button variant="success" onClick={handleCreateAdvert}>
+          <Col md={12} className="create"></Col>
+          <br />
+          <br />
+          <button variant="success" onClick={handleCreateAdvert}>
             Create
-          </Button>
+          </button>
         </Col>
       </Row>
     </Container>

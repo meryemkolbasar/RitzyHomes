@@ -5,3 +5,82 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.container {
+.add-new-advert-container{
+  min-height: 80vh;
+  display: flex;
+
+.title,
+.description,
+.price,
+.advert-type,
+.category,
+.country,
+.city,
+.neighbourhood,
+.location,
+.floor,
+.bedroom,
+.bathroom,
+.garage,
+.year-of-built,
+.size
+{
+  background-color: $color13;
+  border: none;
+  border-bottom: 1.5px solid black;
+  height: 50px;
+  outline: none;
+  text-indent: 5px;
+  caret-color: gray;
+  color: rgb(141, 140, 140);
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+
+.title {
+  width: 900px;
+}
+
+.description {
+width: 900px;
+padding: 90px  ;
+resize: none;
+}
+
+.price,
+.advert-type,
+.category,
+.country,
+.city,
+.neighbourhood,
+.floor,
+.bedroom,
+.bathroom,
+.garage,
+.year-of-built,
+.size {
+  padding: 0px  5px;
+  width: 300px;
+}
+
+.location {
+  width: 900px;
+}
+
+.add-img-btn {
+border: none;
+fill: $color14;
+background-color: white;
+}
+
+.image-button-1,
+.image-button-2{
+  border-radius: 10px;
+  margin: 20px;
+}
+
+}
+}

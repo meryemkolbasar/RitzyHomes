@@ -1,10 +1,18 @@
 import React from 'react'
-import PageHeader from '../../components/common/page-header'
+import AdvertDetailsPageHeader from '../../components/advert/advert-details-page-header'
 import AdvertDetails from '../../components/advert/advert-details';
 const AdvertDetailsPage = () => {
   return (
     <>
-        <PageHeader title= 'Luxuries Villa in Central Park'/>
+        <AdvertDetailsPageHeader
+        title= 'Luxuries Villa in Central Park'
+        location= 'Istanbul, Pendik'
+        listingType= 'For sale'
+        timeAgo= '2 weeks ago'
+        listingID= '1562'
+        price= '$1500.00'
+
+        />
         <AdvertDetails />
     </>
   )
